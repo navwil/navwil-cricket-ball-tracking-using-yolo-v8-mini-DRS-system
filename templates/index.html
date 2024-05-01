@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header-box">
+            <h1>CRICKET <span class="ball"> BALL</span>TRACKER</h1>
+        </div>
+        <div class="content">
+            <p>Upload the video to track the ball !</p>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="videoUpload" accept="video/*">
+                <div class="button-container">
+                    <button id="processButton" disabled>Start Tracking</button>
+                    <button id="showTrackedButton" disabled>See Result</button>
+                </div>
+            </form>
+            <div id="output">
+                <img id="resultImage" src="" alt="Tracked Image" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
